@@ -1,4 +1,4 @@
-	Learning note of several domains of AI
+Learning notes of several domains of AI
 # Index
 
 - `_attachments`: all attachments (image, file .etc)
