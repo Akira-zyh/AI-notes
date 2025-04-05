@@ -20,9 +20,9 @@
 
 ## [[Chapter-2-Bellman-Equation]]
 
-- **One concept: state value** $$v_{\pi}(s) = \mathbb{E}[G_t | S_t = s]$$ State Value is the **mean**($\mathbb{E}$) of **Return**($G_t$) in some**State**($t$)
+- **One concept: state value** $$v_{\pi}(s) = \mathbb{E}[G_t | S_t = s]$$ State Value is the **mean**( $\mathbb{E}$ ) of **Return**( $G_t$ ) in some**State**( $t$ )
 
-- **One tool: Bellman Equation**$$v_{\pi} = r_{\pi} + \gamma P_{\pi}v_{\pi}$$Bellman Equation describes the **relationship** between **State** and **State Value**(get `State Value` from `State` by Bellman Equation to judge the performance of Policy $\pi$)
+- **One tool: Bellman Equation** $$v_{\pi} = r_{\pi} + \gamma P_{\pi}v_{\pi}$$ Bellman Equation describes the **relationship** between **State** and **State Value**(get `State Value` from `State` by Bellman Equation to judge the performance of Policy $\pi$)
 
 - **Policy Evaluation**
 	- widely used later
@@ -34,7 +34,7 @@
 - Two concepts:
 	- **Optimal Policy** $\pi^*$ : the policy which can get the greatest state value
 	- **Optimal State Value** 
-- One tool:**Bellman Optimality Equation**:$$v = \max_{\pi}(r_{\pi} + \gamma P_{\pi}v) = f(v)$$
+- One tool:**Bellman Optimality Equation**: $$v = \max_{\pi}(r_{\pi} + \gamma P_{\pi}v) = f(v)$$ 
 	- Fixed_point theorem
 		- Fundamental problems:  the Optimal State Value fundamentally exists
 			- The Optimal Policy may not be only one while the Optimal State Value must be one
@@ -60,7 +60,7 @@
 ## [[Chapter-5-Monte-Carlo-Learning]]
 > Model free learning
 
-- Learn: **mean estimation with sampling data**$$\mathbb{E}[X] \approx \bar x = \frac{1}{n} \sum_{i = 1}^{n}x_i$$
+- Learn: **mean estimation with sampling data** $$\mathbb{E}[X] \approx \bar x = \frac{1}{n} \sum_{i = 1}^{n}x_i$$
 - Algorithms:
 	1. MC Basic
 	2. MC Exploring Starts
@@ -106,7 +106,7 @@
 > from value-based to policy-based
 
 - Contents
-	1. Metrics to define optimal policies:$$J(\theta) = \bar v_{\pi} , \;\bar r_{\pi}$$
+	1. Metrics to define optimal policies: $$J(\theta) = \bar v_{\pi} , \;\bar r_{\pi}$$
 	2. Policy gradient: $$\nabla J(\theta) = \mathbb{E}[\nabla_{\theta} \ln{\pi}(A|S, \theta)q_{\pi}(S, A)]$$
 	3. Gradient-ascent algorithm (REINFORCE): $$\theta_{t+1} = \theta_{t} + \alpha \nabla_{\pi} \ln{\pi(a_t|s_t, \theta_t)q_{t}(s_t, a_t)}$$
 
@@ -115,7 +115,7 @@
 > value-based (Actor)+ policy-based (Critic)
 
 $$\theta_{t+1} = \theta_{t} + \alpha \nabla_{\pi} \ln{\pi(a_t|s_t, \theta_t)\textcolor{orange}{q_{t}(s_t, a_t)}}$$
-This formula is used to **update $\theta$**
+This formula is used to **update $\theta$ **
 
 - Algorithms:
 	1. The simplest actor-critic (QAC)
