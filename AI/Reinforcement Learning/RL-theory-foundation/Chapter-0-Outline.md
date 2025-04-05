@@ -1,5 +1,3 @@
-#reinforcement_learning
-
 ![Chart](https://github.com/Akira-zyh/AI-notes/blob/main/_attachments/Pasted%20image%2020250405091633.png)
 # Fundamental tools
  
