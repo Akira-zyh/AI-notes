@@ -1,6 +1,6 @@
 #reinforcement_learning
 
-![[_attachments/Pasted image 20250405091633.png]]
+![Chart](https://github.com/Akira-zyh/AI-notes/blob/main/_attachments/Pasted%20image%2020250405091633.png)
 # Fundamental tools
  
 ## [[Chapter-1-Basic-Concept]]
