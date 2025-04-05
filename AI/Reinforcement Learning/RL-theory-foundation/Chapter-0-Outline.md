@@ -1,4 +1,6 @@
 #reinforcement_learning
+
+![[Pasted image 20250405091633.png]]
 # Fundamental tools
  
 ## [[Chapter-1-Basic-Concept]]
@@ -18,9 +20,9 @@
 
 ## [[Chapter-2-Bellman-Equation]]
 
-- **One concept: state value** $$v_{\pi}(s) = \mathbb{E}[G_t | S_t = s]$$==State Value is the **mean**($\mathbb{E}$) of **Return**($G_t$) in some**State**($t$)==
+- **One concept: state value** $$v_{\pi}(s) = \mathbb{E}[G_t | S_t = s]$$State Value is the **mean**($\mathbb{E}$) of **Return**($G_t$) in some**State**($t$)
 
-- **One tool: Bellman Equation**$$v_{\pi} = r_{\pi} + \gamma P_{\pi}v_{\pi}$$==Bellman Equation describes the **relationship** between **State** and **State Value**==(get `State Value` from `State` by Bellman Equation to judge the performance of Policy $\pi$)
+- **One tool: Bellman Equation**$$v_{\pi} = r_{\pi} + \gamma P_{\pi}v_{\pi}$$Bellman Equation describes the **relationship** between **State** and **State Value**(get `State Value` from `State` by Bellman Equation to judge the performance of Policy $\pi$)
 
 - **Policy Evaluation**
 	- widely used later
@@ -32,10 +34,10 @@
 - Two concepts:
 	- **Optimal Policy** $\pi^*$ : the policy which can get the greatest state value
 	- **Optimal State Value** 
-- One tool:==**Bellman Optimality Equation**==:$$v = \max_{\pi}(r_{\pi} + \gamma P_{\pi}v) = f(v)$$
+- One tool:**Bellman Optimality Equation**:$$v = \max_{\pi}(r_{\pi} + \gamma P_{\pi}v) = f(v)$$
 	- Fixed_point theorem
 		- Fundamental problems:  the Optimal State Value fundamentally exists
-			- ==The Optimal Policy may not be only one== while ==the Optimal State Value must be one==
+			- The Optimal Policy may not be only one while the Optimal State Value must be one
 			- The Optimal Policy may be either **deterministic** (确定性的) or **stochastic** (随机性的)
 		- An algorithm solving the equation --- Value Iteration (VI)
 - **Optimality** 
@@ -82,8 +84,8 @@
 
 - Algorithms:
 	1. TD learning of **state values**
-	2. ==Sarsa== --- TD learning of **action values**
-	3. ==Q-learning== --- TD learning of **optimal action values** --- `off-policy`
+	2. Sarsa --- TD learning of **action values**
+	3. Q-learning --- TD learning of **optimal action values** --- `off-policy`
 		- `on-policy` vs `off-policy`
 			- on-policy:
 			- off-policy:
