@@ -1,6 +1,6 @@
 #reinforcement_learning
 
-![[Pasted image 20250405091633.png]]
+![[_attachments/Pasted image 20250405091633.png]]
 # Fundamental tools
  
 ## [[Chapter-1-Basic-Concept]]
@@ -20,7 +20,7 @@
 
 ## [[Chapter-2-Bellman-Equation]]
 
-- **One concept: state value** $$v_{\pi}(s) = \mathbb{E}[G_t | S_t = s]$$State Value is the **mean**($\mathbb{E}$) of **Return**($G_t$) in some**State**($t$)
+- **One concept: state value** $$v_{\pi}(s) = \mathbb{E}[G_t | S_t = s]$$ State Value is the **mean**($\mathbb{E}$) of **Return**($G_t$) in some**State**($t$)
 
 - **One tool: Bellman Equation**$$v_{\pi} = r_{\pi} + \gamma P_{\pi}v_{\pi}$$Bellman Equation describes the **relationship** between **State** and **State Value**(get `State Value` from `State` by Bellman Equation to judge the performance of Policy $\pi$)
 
