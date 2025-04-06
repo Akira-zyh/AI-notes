@@ -2,7 +2,7 @@ Learning notes of several domains of AI
 # Index
 
 - `_attachments`: all attachments (image, file .etc)
-- `AI` : notes of different domains in AI
+- `AI` : notes of different field in AI
 	- `Machine Learning`
 	- `Pattern Recognization`
 	- `Computer Vision`
