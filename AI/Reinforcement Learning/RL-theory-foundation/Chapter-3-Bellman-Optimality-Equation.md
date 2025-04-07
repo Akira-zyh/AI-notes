@@ -4,7 +4,7 @@
 
 when $\pi_1$ is better than $\pi_2$ :
 $$v_{\pi_1}(s) \ge v_{\pi_2} \; \text{ for all } s \in S$$
-So, a policy $\pi^*$ is optimal if $v_{\pi^*}(s) \ge v_{\pi}(s)$ **for all $s$ **and for **any other policy $\pi$**
+So, a policy $\pi^*$ is optimal if $v_{\pi^*}(s) \ge v_{\pi}(s)$ for all $s$ **and for any other policy $\pi$
 
 While this definition leads to many questions:
 - Does the optimal policy *exist*?
@@ -18,6 +18,7 @@ $\textcolor{red}{\star}$ **Bellman Optimality Equation**(BOE) can answer questio
 # Bellman Optimality Equation(BOE)
 
 1. BOE  **element-wise form**
+
 $$\textcolor{orange}{v(s) = \max_{\pi} \sum_{a} \pi(a|s) \bigg(\sum_r p(r|s, a)r + \gamma\sum_{s'}p(s'|s,a)v(s')\bigg), \forall s \in S}$$
 simplify : $$\textcolor{orange}{v(s) = \max_{\pi} \sum_a \pi(a|s) q(s|a), \forall s \in S}$$
 Remarks:
@@ -45,6 +46,7 @@ Some questions to answer:
 Maximization on the right-hand side of BOE is about **two** unknown variables, which seems to be difficult to solve
 
 $\star$ Example
+
 Suppose $q_1,q_2,q_3 \in \mathbb{R}$ are given and $q3 \geq q1, q2$. Find $c_1^*, c_2^*, c_3^*$ solving 
 $$\max_{c_1, c_2, c_3} c_1q_1 + c_2q_2 + c_3q_3$$where $c_1 + c_2 + c_3 = 1$  and $c_1, c_2, c_3 \geq 0$. **Then**, the optimal solution is $c_3^* = 1$ and $c_1^* = c_2^* = 0$. Because, for any $c_1, c_2, c_3$:
 $$q_3 = (c_1 + c_2 + c_3)q_3 = c_1q_3 + c_2q_3 + c_3q_3 \ge c_1q_1 + c_2q_2 + c_3q_3$$
