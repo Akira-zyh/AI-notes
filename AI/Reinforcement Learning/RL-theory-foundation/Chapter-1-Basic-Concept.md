@@ -116,5 +116,20 @@ The following table is **a tabular representation of the *state transition proce
 >>> If agent takes action $a_5$ at $s_9$ $\rightarrow$ the next state is again $s_9$ && the reward plus 1 ($r_{target} +=1$)
 >>> If agent takes action $a_3$ or $a_2$ $\rightarrow$ the next state is also $s_9$ while the reward subtract 1 $(r_{boundary} -=1$)
 
+#### reward process
+- **How to express *reward process*?** 
+	1. tabular representation ---*Deterministic reward* only
 
-
+|       | $a_1 \text{(upward)}$ | $a_2 \text{(rightward)}$ | $a_3 \text{(downward)}$ | $a_4 \text{(leftward)}$ | $a_5 \text{(still)}$ |
+| :---: | :-------------------: | :----------------------: | :---------------------: | :---------------------: | :------------------: |
+| $s_1$ |    $r_{boundary}$     |           $0$            |           $0$           |     $r_{boundary}$      |         $0$          |
+| $s_2$ |    $r_{boundary}$     |           $0$            |           $0$           |           $0$           |         $0$          |
+| $s_3$ |    $r_{boundary}$     |      $r_{boundary}$      |     $r_{forbidden}$     |           $0$           |         $0$          |
+| $s_4$ |          $0$          |           $0$            |     $r_{forbidden}$     |     $r_{boundary}$      |         $0$          |
+| $s_5$ |          $0$          |     $r_{forbidden}$      |           $0$           |           $0$           |         $0$          |
+| $s_6$ |          $0$          |      $r_{boundary}$      |      $r_{target}$       |           $0$           |   $r_{forbidden}$    |
+| $s_7$ |          $0$          |           $0$            |     $r_{boundary}$      |     $r_{boundary}$      |   $r_{forbidden}$    |
+| $s_8$ |          $0$          |       $r_{target}$       |     $r_{boundary}$      |     $r_{forbidden}$     |         $0$          |
+| $s_9$ |    $r_{forbidden}$    |      $r_{boundary}$      |     $r_{boundary}$      |           $0$           |     $r_{target}$     |
+- 
+	2. conditional probabilities ---Both *deterministic* and *stochastic*
