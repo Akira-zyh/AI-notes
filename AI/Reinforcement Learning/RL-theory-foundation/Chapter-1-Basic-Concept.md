@@ -2,6 +2,11 @@
 
 This book will use a grid world example since they are intuitive for illustrating new concepts and algorithms
 
+![[Pasted image 20250408123821.png | Grid World Example]]
+In grid world example: 
+- yellow walls are ***forbidden*** that is not accessible or give punishment for entry.
+- white walls are ***accessible***.
+- light blue wall is a ***target cell*** that the agent would like to reach.
 # basic concepts
 
 ### State and Action
@@ -22,4 +27,23 @@ This book will use a grid world example since they are intuitive for illustratin
 ### State transition
 - **What is *state transition*?** When **taking an action**, the agent may **move from one state to another**.
 - **How to express *state transition*?**   $s_1$ $\xrightarrow{a_2}$ $s_2$
-- 
+	- The agent will **be bounced back** when **it attempts to go beyond the boundary,** for example, $s_1$ $\xrightarrow{a_1}$ $s_1$ 
+	- The agent will **be bounced back when forbidden are not accessible** (for example, $s_5$ $\xrightarrow{a_2}$ $s_5$) or **get through when the forbidden are accessible** (for example, $s_5$  $\xrightarrow{a_2}$ $s_6$)
+	- **Which scenario should we consider?** Depend on the physical environment.
+
+#### *state transition process*
+- **What is *state transition process*?** state transition process is **defined for each state and its associated actions** and can be **described by a table** shown in following 
+
+|       |  $a_1 \text{ (upward)}$   | $a_2 \text{ (rightward)}$ | $a_3 \text{ (downward)}$  | $a_4 \text{ (leftward)}$  |   $a_5 \text{ (still)}$   |
+| :---: | :-----------------------: | :-----------------------: | :-----------------------: | :-----------------------: | :-----------------------: |
+| $s_1$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_2$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_3$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_4$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_5$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_6$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_7$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_8$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_9$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+
+- **How to express *state transition process*?** 
