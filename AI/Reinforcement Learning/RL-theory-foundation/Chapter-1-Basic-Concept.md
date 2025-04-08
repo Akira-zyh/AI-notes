@@ -50,7 +50,7 @@ The following table is **a tabular representation of the *state transition proce
 
 - **How to express *state transition process*?** 
 	1. *tabular representation* above ---***Deterministic* state transitions only**
-	2. $\textcolor{red}{\star}$ ***conditional probabilities*** ---**Both *deterministic* and *stochastic*** *state transitions*
+	2. $\textcolor{red}{\star}$ ***conditional probabilities*** ---**Both *deterministic* and *stochastic*** *state transitions*, denoted as $\textcolor{orange}{p(s'| s, a)}$
 		- For example, for $s_1$ and $s_2$, the conditional probability distribution is 
 			- $p(s_1|s_1,a_2)=0$
 			- $p(s_2|s_1,a_2)=1$
@@ -65,7 +65,7 @@ The following table is **a tabular representation of the *state transition proce
 	- Following a *policy*, the agent can **generate a *trajectory* starting from an initial state**
 - **How to express *policy*?** 
 	- arrows in the grid world map
-	- $\textcolor{red}{\star}$ ***conditional probabilities***: denoted as $\pi(a|s)$
+	- $\textcolor{red}{\star}$ ***conditional probabilities***: denoted as $\textcolor{orange}{\pi(a|s)}$
 		- ***Deterministic policy***: **Only one policy** can be taken when taking actions at state $s_1$
 			- For example, the policy for state $s_1$ is
 				- $\pi(a_1|s_1)=0$
@@ -100,7 +100,7 @@ The following table is **a tabular representation of the *state transition proce
 ---
 ### Reward
 - **What is *reward*?** Feedback from environment after the agent executes an action at a state
-- **How to express *reward*?** a function of the state $s$ and action $a$, which is denoted as $r(s,a)$
+- **How to express *reward*?** a function of the state $s$ and action $a$, which is denoted as $\textcolor{orange}{r(s,a)}$
 	- Its value can be **positive** or **negative** real number or $0$. Different rewards have different impacts on the policy that agent would eventually learn
 		- *positive reward*: **Encourage the agent to take the corresponding action**
 		- *negative reward*: **Discourage the agent from taking that action**
@@ -132,4 +132,22 @@ The following table is **a tabular representation of the *state transition proce
 | $s_8$ |          $0$          |       $r_{target}$       |     $r_{boundary}$      |     $r_{forbidden}$     |         $0$          |
 | $s_9$ |    $r_{forbidden}$    |      $r_{boundary}$      |     $r_{boundary}$      |           $0$           |     $r_{target}$     |
 - 
-	2. conditional probabilities ---Both *deterministic* and *stochastic*
+	2. conditional probabilities ---Both *deterministic* and *stochastic*, **denoted as** $\textcolor{orange}{p(r|s,a)}$
+		- For example, for state $s_1$, we have
+			- $p(r=-1|s_1,a_1)=1$
+			- $p(r\neq -1 |s_1, a_1)=0$
+
+### Trajectories, returns, and episodes
+
+#### *trajectory*
+- **What is *trajectory*?** A *state-action-reward* chain
+	- For example, $s_1$ $\xrightarrow[r=0]{a_2}$ $s_2$ $\xrightarrow[r=0]{a_3}$ $s_5$ $\xrightarrow[r=0]{a_3}$ $s_8$ $\xrightarrow[r=0]{a_2}$ $s_9$ 
+
+#### *return*
+- **What is *return*?** also called ***total rewards*** or ***cumulative rewards*** **the sum of all the rewards collected along the *trajectory***
+	- For example, $\text{return} = 0 + 0 + 0 + 1 = 1$
+- **What does *return* consist of?** an *immediate reward* and *future rewards*
+	- *immediate reward*: the reward obtained after taking an action **at** the initial state
+	- *future rewards*: the total rewards obtained after **leaving** the initial state
+- ***return* can be defined for infinitely long *trajectories***
+	- For example, we can design a policy so that the agent stays still after reaching *target cell* $s_9$. The policy: $s_1$ $\xrightarrow[r=0]{a_2}$ $s_2$ $\xrightarrow[r=0]{a_3}$ $s_5$ $\xrightarrow[r=0]{a_3}$ $s_8$ $\xrightarrow[r=0]{a_2}$ $s_9$ $\xrightarrow[r=0]{a_5}$ $s_9$ $\xrightarrow[r=0]{a_5}$ $s_9 \dots$ 
