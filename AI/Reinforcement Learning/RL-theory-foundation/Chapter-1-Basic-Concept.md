@@ -137,6 +137,7 @@ The following table is **a tabular representation of the *state transition proce
 			- $p(r=-1|s_1,a_1)=1$
 			- $p(r\neq -1 |s_1, a_1)=0$
 
+---
 ### Trajectories, returns, and episodes
 
 #### *trajectory*
