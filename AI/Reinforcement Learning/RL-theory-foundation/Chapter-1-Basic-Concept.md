@@ -51,10 +51,9 @@ The following table is **a tabular representation of the *state transition proce
 - **How to express *state transition process*?** 
 	1. *tabular representation* above
 	2. *conditional probabilities*. 
-		- For example, for $s_1$ and $s_2$, the conditional probability distribution is $$\begin{split}
-p(s_1|s_1,a_2)=0\\
-p(s_2|s_1,a_2)=1\\
-p(s_3|s_1,a_2)=0\\
-p(s_4|s_1,a_2)=0\\
-p(s_5|s_1,a_2)=0
-\end{split}$$
+		- For example, for $s_1$ and $s_2$, the conditional probability distribution is $$\begin{split} p(s_1|s_1,a_2)=0\\ p(s_2|s_1,a_2)=1\\ p(s_3|s_1,a_2)=0\\ p(s_4|s_1,a_2)=0\\ p(s_5|s_1,a_2)=0 \end{split}$$
+		- These indicate that, when take $a_2$ at $s_1$, **the probability of the agent moving to $s_2$ is $1$**, and the probabilities of the agent moving to other states are $0$
+- 
+
+
+	
