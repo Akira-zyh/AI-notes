@@ -32,18 +32,29 @@ In grid world example:
 	- **Which scenario should we consider?** Depend on the physical environment.
 
 #### *state transition process*
-- **What is *state transition process*?** state transition process is **defined for each state and its associated actions** and can be **described by a table** shown in following 
+- **What is *state transition process*?** state transition process is **defined for each state and its associated actions** 
+
+The following table is **a tabular representation of the *state transition process***.
 
 |       |  $a_1 \text{ (upward)}$   | $a_2 \text{ (rightward)}$ | $a_3 \text{ (downward)}$  | $a_4 \text{ (leftward)}$  |   $a_5 \text{ (still)}$   |
 | :---: | :-----------------------: | :-----------------------: | :-----------------------: | :-----------------------: | :-----------------------: |
-| $s_1$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
-| $s_2$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
-| $s_3$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
-| $s_4$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
-| $s_5$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
-| $s_6$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
-| $s_7$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
-| $s_8$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
-| $s_9$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_1$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_2}$ | $\textcolor{orange}{s_4}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_1}$ |
+| $s_2$ | $\textcolor{orange}{s_2}$ | $\textcolor{orange}{s_3}$ | $\textcolor{orange}{s_5}$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_2}$ |
+| $s_3$ | $\textcolor{orange}{s_3}$ | $\textcolor{orange}{s_3}$ | $\textcolor{orange}{s_6}$ | $\textcolor{orange}{s_2}$ | $\textcolor{orange}{s_3}$ |
+| $s_4$ | $\textcolor{orange}{s_1}$ | $\textcolor{orange}{s_5}$ | $\textcolor{orange}{s_7}$ | $\textcolor{orange}{s_4}$ | $\textcolor{orange}{s_4}$ |
+| $s_5$ | $\textcolor{orange}{s_2}$ | $\textcolor{orange}{s_6}$ | $\textcolor{orange}{s_8}$ | $\textcolor{orange}{s_4}$ | $\textcolor{orange}{s_5}$ |
+| $s_6$ | $\textcolor{orange}{s_3}$ | $\textcolor{orange}{s_6}$ | $\textcolor{orange}{s_9}$ | $\textcolor{orange}{s_5}$ | $\textcolor{orange}{s_6}$ |
+| $s_7$ | $\textcolor{orange}{s_4}$ | $\textcolor{orange}{s_8}$ | $\textcolor{orange}{s_7}$ | $\textcolor{orange}{s_7}$ | $\textcolor{orange}{s_7}$ |
+| $s_8$ | $\textcolor{orange}{s_5}$ | $\textcolor{orange}{s_9}$ | $\textcolor{orange}{s_8}$ | $\textcolor{orange}{s_7}$ | $\textcolor{orange}{s_7}$ |
+| $s_9$ | $\textcolor{orange}{s_6}$ | $\textcolor{orange}{s_9}$ | $\textcolor{orange}{s_9}$ | $\textcolor{orange}{s_8}$ | $\textcolor{orange}{s_9}$ |
 
 - **How to express *state transition process*?** 
+	1. *tabular representation* above
+	2. *conditional probabilities*. 
+		- For example, for $s_1$ and $s_2$, the conditional probability distribution is $$\begin{split}
+p(s_1|s_1,a_2)=0\\
+p(s_2|s_1,a_2)=1\\
+p(s_3|s_1,a_2)=0\\
+p(s_4|s_1,a_2)=0\\
+p(s_5|s_1,a_2)=0
+\end{split}$$
