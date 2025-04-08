@@ -153,7 +153,7 @@ The following table is **a tabular representation of the *state transition proce
 	- For example, we can design a policy so that the agent stays still after reaching *target cell* $s_9$. 
 		- The trajectory: $s_1$ $\xrightarrow[r=0]{a_2}$ $s_2$ $\xrightarrow[r=0]{a_3}$ $s_5$ $\xrightarrow[r=0]{a_3}$ $s_8$ $\xrightarrow[r=0]{a_2}$ $s_9$ $\xrightarrow[r=0]{a_5}$ $s_9$ $\xrightarrow[r=0]{a_5}$ $s_9 \dots$ 
 		- The direct sum of the rewards along the trajectory: $\text{return}=0+0+0+1+1+1+\dots+\infty$
-		- The *discounted return* (with *discount rate* in order to make return converge) along the trajectory: $\text{discounted return}=0+\gamma 0+\gamma^2 0 + \gamma^3 1 + \gamma^4 1 + \gamma^5 1 + \dots \text{, } \gamma \in(0,1)$
+		- The *discounted return* (with *discount rate* in order to make return converge) along the trajectory: $\text{discounted return}=0+\gamma 0+\gamma^2 0 + \gamma^3 1 + \gamma^4 1 + \gamma^5 1 + \dots \text{ ,  } \gamma \in(0,1)$
 			- *discounted return* can be calculated as $\text{discounted return} = \gamma^3(1+\gamma + \gamma^2 + \dots) = \gamma^3\frac{1}{1-\gamma}$
 
 ##### The reason for using *discount rate* $\gamma$
