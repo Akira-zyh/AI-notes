@@ -211,3 +211,13 @@ After reaching the terminal state in an *episodic task*, the agent can continue 
 - $\textcolor{red}{\star}$ Markov chain: a discrete-time process and the number of states is **finite** or **countable**
 ![[截屏2025-04-08 17.36.25.png]]
 
+### Summary
+- *reinforcement learning* can be described as **an agent-environment interaction process**.
+- The *agent* is a **decision-maker**
+	- sense its state.
+	- maintain policies.
+	- execute actions.
+- **Everything outside of the agent is regarded as the environment**. (In the grid world example, the agent and environment correspond to the robot and the grid world)
+- After the agent decides to take an action, the actuator executes such a decision.
+- Then, **the state of the agent would be changed** and **a reward can be obtained**
+- By using interpreters, the agent can **interpret the new state and the reward.**
