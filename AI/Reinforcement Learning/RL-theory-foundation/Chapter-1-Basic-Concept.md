@@ -99,3 +99,22 @@ The following table is **a tabular representation of the *state transition proce
 
 ---
 ### Reward
+- **What is *reward*?** Feedback from environment after the agent executes an action at a state
+- **How to express *reward*?** a function of the state $s$ and action $a$, which is denoted as $r(s,a)$
+	- Its value can be **positive** or **negative** real number or $0$. Different rewards have different impacts on the policy that agent would eventually learn
+		- *positive reward*: **Encourage the agent to take the corresponding action**
+		- *negative reward*: **Discourage the agent from taking that action**
+> In the grid world example, the rewards are designed as follows:
+>> If the agent attempts to exit the boundary $\rightarrow$ $r_{boundary}=-1$
+>> If the agent attempts to enter a forbidden cell $\rightarrow$ $r_{forbidden} = -1$
+>> If the agent reaches the *target state* $\rightarrow$ $r_{target}=1$
+>> Otherwise, the agent obtains a reward of $r_{other} = 0$
+>
+>Some special conditions:
+>> After reaching target state $s_9$, **the *reward process* does not have to terminate**
+>>> For example:
+>>> If agent takes action $a_5$ at $s_9$ $\rightarrow$ the next state is again $s_9$ && the reward plus 1 ($r_{target} +=1$)
+>>> If agent takes action $a_3$ or $a_2$ $\rightarrow$ the next state is also $s_9$ while the reward subtract 1 $(r_{boundary} -=1$)
+
+
+
