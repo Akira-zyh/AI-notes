@@ -210,7 +210,8 @@ After reaching the terminal state in an *episodic task*, the agent can continue 
 - Relationship between MDPs and MPs: $\text{MDPs}$ ${\xrightarrow[\text{degenerates}]{\text{fixed policy}}}$ $\text{MPs}$
 - $\textcolor{red}{\star}$ Markov chain: a discrete-time process and the number of states is **finite** or **countable**
 ![[截屏2025-04-08 17.36.25.png]]
-
+ 
+***
 ### Summary
 - *reinforcement learning* can be described as **an agent-environment interaction process**.
 - The *agent* is a **decision-maker**
