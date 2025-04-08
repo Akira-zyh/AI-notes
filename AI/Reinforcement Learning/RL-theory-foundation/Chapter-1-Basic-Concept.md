@@ -9,6 +9,7 @@ In grid world example:
 - light blue wall is a ***target cell*** that the agent would like to reach.
 # basic concepts
 
+---
 ### State and Action
 #### State
 - **What is *state*?** State describes the agent's **status with respect to the environment**.
@@ -49,8 +50,8 @@ The following table is **a tabular representation of the *state transition proce
 | $s_9$ | $\textcolor{orange}{s_6}$ | $\textcolor{orange}{s_9}$ | $\textcolor{orange}{s_9}$ | $\textcolor{orange}{s_8}$ | $\textcolor{orange}{s_9}$ |
 
 - **How to express *state transition process*?** 
-	1. *tabular representation* above
-	2. *conditional probabilities*. 
+	1. *tabular representation* above ---***Deterministic* state transitions only**
+	2. $\textcolor{red}{\star}$ ***conditional probabilities*** ---**Both *deterministic* and *stochastic*** *state transitions*
 		- For example, for $s_1$ and $s_2$, the conditional probability distribution is 
 			- $p(s_1|s_1,a_2)=0$
 			- $p(s_2|s_1,a_2)=1$
@@ -58,7 +59,44 @@ The following table is **a tabular representation of the *state transition proce
 			- $p(s_4|s_1,a_2)=0$
 			- $p(s_5|s_1,a_2)=0$
 		- These indicate that, when take $a_2$ at $s_1$, **the probability of the agent moving to $s_2$ is $1$**, and the probabilities of the agent moving to other states are $0$
-- 
 
+---
+### Policy
+- **What is *policy*?** *policy* tells the agent **which *actions* to take** at **every *state***. 
+	- Following a *policy*, the agent can **generate a *trajectory* starting from an initial state**
+- **How to express *policy*?** 
+	- arrows in the grid world map
+	- $\textcolor{red}{\star}$ ***conditional probabilities***: denoted as $\pi(a|s)$
+		- ***Deterministic policy***: **Only one policy** can be taken when taking actions at state $s_1$
+			- For example, the policy for state $s_1$ is
+				- $\pi(a_1|s_1)=0$
+				- $\pi(a_2|s_1)=1$
+				- $\pi(a_3|s_1)=0$
+				- $\pi(a_4|s_1)=0$
+				- $\pi(a_5|s_1)=0$
+			- ![[Pasted image 20250408142536.png]]
+			- These indicate that the probability of taking action $a_2$ at state $s_1$ is $1$, and the probabilities of taking other actions are $0$
+		- ***Stochastic policy***: **Multiple policies** can be taken when taking actions at state $s_1$
+			- For example, the policy for state $s_1$ is
+				- $\pi(a_1|s_1) = 0$
+				- $\pi(a_2|s_1) = 0.5$
+				- $\pi(a_3|s_1) = 0.5$
+				- $\pi(a_4|s_1) = 0$
+				- $\pi(a_5|s_1) = 0$
+			- ![[Pasted image 20250408142611.png]]
+		- tabular conditional probabilities
 
-	
+|       | $a_1 \text{(upward)}$ | $a_2 \text{(rightward)}$ | $a_3 \text{(downward)}$ | $a_4 \text{(leftward)}$ | $a_5 \text{(still)}$ |
+| :---: | :-------------------: | :----------------------: | :---------------------: | :---------------------: | :------------------: |
+| $s_1$ |          $0$          |          $0.5$           |          $0.5$          |           $0$           |         $0$          |
+| $s_2$ |          $0$          |           $0$            |           $1$           |           $0$           |         $0$          |
+| $s_3$ |          $0$          |           $0$            |           $0$           |           $1$           |         $0$          |
+| $s_4$ |          $0$          |           $1$            |           $0$           |           $0$           |         $0$          |
+| $s_5$ |          $0$          |           $0$            |           $1$           |           $0$           |         $0$          |
+| $s_6$ |          $0$          |           $0$            |           $1$           |           $0$           |         $0$          |
+| $s_7$ |          $0$          |           $1$            |           $0$           |           $0$           |         $0$          |
+| $s_8$ |          $0$          |           $1$            |           $0$           |           $0$           |         $0$          |
+| $s_9$ |          $0$          |           $0$            |           $0$           |           $0$           |         $1$          |
+
+---
+### Reward
