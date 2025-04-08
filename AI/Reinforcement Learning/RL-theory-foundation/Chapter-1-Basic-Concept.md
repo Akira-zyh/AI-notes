@@ -1,4 +1,4 @@
-# A grid world example
+## A grid world example
 
 This book will use a grid world example since they are intuitive for illustrating new concepts and algorithms
 
