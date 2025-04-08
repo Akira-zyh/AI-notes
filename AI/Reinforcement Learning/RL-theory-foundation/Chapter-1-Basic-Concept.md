@@ -9,7 +9,6 @@ In grid world example:
 - light blue wall is a ***target cell*** that the agent would like to reach.
 # basic concepts
 
----
 ### State and Action
 #### State
 - **What is *state*?** State describes the agent's **status with respect to the environment**.
