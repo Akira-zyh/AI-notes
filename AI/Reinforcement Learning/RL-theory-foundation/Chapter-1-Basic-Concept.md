@@ -195,7 +195,8 @@ After reaching the terminal state in an *episodic task*, the agent can continue 
 	- In state s, the probability of choosing action $a$ is $\textcolor{orange}{\pi(a|s)}$. It holds $\sum_{a \in \mathcal{A}(s)}\pi(a|s) = 1$
 - Markov property: 
 	- the *Markov property* refers to the memoryless property of a *stochastic process*.
-	- $$\textcolor{orange}{p(s_{t+1}|s_t, a_t, s_{t-1}, a_{t-1},\dots,s_{0},a_{0})=p(s_{t+1}|s_t,a_t)}$$ $$\textcolor{orange}{p(r_{t+1}|s_t, a_t, s_{t-1}, a_{t-1},\dots,s_{0},a_{0})=p(r_{t+1}|s_t,a_t)}$$
+	- $$\textcolor{orange}{p(s_{t+1}|s_t, a_t, s_{t-1}, a_{t-1},\dots,s_{0},a_{0})=p(s_{t+1}|s_t,a_t)}$$
+	- $$\textcolor{orange}{p(r_{t+1}|s_t, a_t, s_{t-1}, a_{t-1},\dots,s_{0},a_{0})=p(r_{t+1}|s_t,a_t)}$$
 		- $t$: represents the **current time step**.
 		- $t+1$: represents the **next time step**.
 		- $\textcolor{red}{\star}$ *Markov property* is important for deriving the fundamental Bellman equation of MDPs, as shown in the next chapter
