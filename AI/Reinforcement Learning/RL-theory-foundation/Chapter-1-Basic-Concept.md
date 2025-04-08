@@ -22,5 +22,5 @@ This book will use a grid world example since they are intuitive for illustratin
 ### State transition
 - **What is *state transition*?** When **taking an action**, the agent may **move from one state to another**.
 - **How to express *state transition*?**  
-$$s_1 \overset{a_2}{\rightarrow} s_2$$
+$$s_1 \xrightarrow{a_2} s_2$$
 - 
