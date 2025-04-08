@@ -166,4 +166,47 @@ The following table is **a tabular representation of the *state transition proce
 - **What is *episode*?** When interacting with the environment by following a policy, the agent may **stop at some *terminal states***. The result trajectory is called an *episode* or a *trial*
 	- If the environment or policy is *stochastic* $\rightarrow$ we obtain **different episodes** when **starting from the same state**
 	- If the environment or policy is *deterministic* $\rightarrow$ we always obtain **same episodes when starting form the same state**
-	- 
+- **An episode is usually assumed to be a finite trajectory**
+
+##### *episodic tasks*
+- **What is *episodic tasks*?** Tasks with episodes
+
+###### *continuing tasks*
+- **What is *continuing tasks*?** Some tasks without terminal states
+
+###### convert *episodic tasks* into *continuing tasks*
+After reaching the terminal state in an *episodic task*, the agent can continue taking actions in two ways:
+1. ***Absorbing states**: Treat the *terminal state* as a special state. We can design its *action space* or *state transition* so that the agent **stays in this state forever**---*absorbing states*
+	- For example: for the *target state* $s_9$, we can specify $\mathcal{A}(s_9) = {a_5}$ or set $\mathcal{A}(s_9) = {a_1, \dots, a_5} \text{ with } p(s_9|s_9,a_i) = 1 \text{ for all } i=1,\dots,5$
+2. $\textcolor{red}{\star}$ **Normal states**: Treat the *terminal state* as a normal state. We can simply **set its action space to the same as the other states, and the agent leave and come back again**. Every time $s_9$ is reached, **the agent will eventually learn to stay at $s_9$ forever to collect more rewards**. While, a discount rate must be used to calculate the discounted return to **avoid divergence**
+---
+### Markov Decision Process
+> An MDP is a general framework for describing *stochastic dynamical systems*
+
+#### key ingredients of an MDP
+- Sets:
+	- *state space*: the set of all states, denoted as $\mathcal{S}$
+	- *action space*: the set of all actions, denoted as $\mathcal{A}(s)$, associated with each state $s \in \mathcal{S}$
+	- *reward space*: the set of rewards, denoted as $\mathcal{R}(s,a)$, associated with state-action pair $(s,a)$
+- Model:
+	- *State transition probability*: In state $s$, when taking action $a$, the probability of transitioning to state $s'$ is $\textcolor{orange}{p(s'|s,a)}$. It holds $\sum_{s' \in S}p(s'|s,a) = 1$ for any $(s,a)$
+	- *Reward probability*: In state $s$, when taking action $a$, the probability of obtaining reward $r$ is $\textcolor{orange}{p(r|s,a)}$. It holds $\sum_{r \in R(s,a)}p(r|s,a) = 1$ for any $(s,a)$
+- Policy:
+	- In state s, the probability of choosing action $a$ is $\textcolor{orange}{\pi(a|s)}$. It holds $\sum_{a \in \mathcal{A}(s)}\pi(a|s) = 1$
+- Markov property: 
+	- the *Markov property* refers to the memoryless property of a *stochastic process*.
+	- $$\textcolor{orange}{p(s_{t+1}|s_t, a_t, s_{t-1}, a_{t-1},\dots,s_{0},a_{0})=p(s_{t+1}|s_t,a_t)}$$$$\textcolor{orange}{p(r_{t+1}|s_t, a_t, s_{t-1}, a_{t-1},\dots,s_{0},a_{0})=p(r_{t+1}|s_t,a_t)}$$
+		- $t$: represents the **current time step**.
+		- $t+1$: represents the **next time step**.
+		- $\textcolor{red}{\star}$ *Markov property* is important for deriving the fundamental Bellman equation of MDPs, as shown in the next chapter
+
+##### stationary models and nonstationary models
+- $\textcolor{red}{\star}$ stationary models: does not change over time.
+- nonstationary models: may vary over time.
+	- For example in the *grid world example*, if a forbidden area may pop up or disappear sometimes, the model is nonstationary
+
+##### Markov processes(MPs)
+- Relationship between MDPs and MPs: $\text{MDPs}$ ${\xrightarrow[\text{degenerates}]{\text{fixed policy}}}$ $\text{MPs}$
+- $\textcolor{red}{\star}$ Markov chain: a discrete-time process and the number of states is **finite** or **countable**
+![[截屏2025-04-08 17.36.25.png]]
+
