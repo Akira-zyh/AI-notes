@@ -4,7 +4,7 @@ This book will use a grid world example since they are intuitive for illustratin
 
 ![[Pasted image 20250408123821.png | Grid World Example]]
 In grid world example: 
-- yellow walls are ***forbidden*** that is not accessible or give punishment for entry.
+- yellow walls are ***forbidden*** that is not accessible or obtain a punishment for entry.
 - white walls are ***accessible***.
 - light blue wall is a ***target cell*** that the agent would like to reach.
 # basic concepts
