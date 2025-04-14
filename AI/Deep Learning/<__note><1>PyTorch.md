@@ -100,9 +100,9 @@ print(y)
 2. *Index* Operation(similar with `numpy`)
 Attention! 
 
-The result of index shares memory with original data -- change one and the other changes too
+The result of index as well as `torch.view()` shares memory with original data -- change one and the other changes too.
 
-If you don't want to modify, you can use `copy()` method to create a copy of original data
+If you don't want to modify, you can use `copy()` method to create a copy of original data.
 
 ```Python
 import torch
@@ -117,9 +117,36 @@ y += 1
 print(y)
 print(x[0, :])
 
+# 
+
 # create a copy
 y.copy_(x[0, :])
 y += 1
 print(y)
 print(x[0, :])
 ```
+
+2. Methods for changing dimension of tensor: `torch.view()`
+```Python
+x = torch.randn(4, 4)
+y = x.view(16)
+z = x.view(-1, 8) # -1 means that dimension depends on the others dimensions
+print(x.size(), y.size(), z.size())
+# torch.Size([4, 4]) torch.Size([16]) torch.Size([2, 8])
+```
+
+$\textcolor{red}{\text{Attention!}}$ The result of `torch.view()` shares memory with original tensor. Change one of them, the other changes as well
+
+- The other method to transform a tensor without any impact on original tensor
+```Python
+x = torch.randn(4, 4)
+print(x)
+
+# create a copy and then transform
+y = x.clone().view(-1, 8)
+y += 1
+
+print(x)
+print(y)
+```
+![[tensorOperation2.png]]
